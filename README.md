@@ -30,9 +30,9 @@ We're inspired to tackle this challenge by creating a new kind of system that ca
 - Prompt Template Creation - Develop efficient prompt templates to guide user interactions smoothly.
 - Language Model Adjustment - Fine-tune the Large Language Model (LLM) with a Patient QA dataset to improve its response quality.  
 - Experimental Analysis - Conduct experiments to identify the best models for the classifier and LLM.
-- Integration of Advanced Techniques - Incorporate additional methods like Reinforcement Learning to enhance system capabilities.
 - Feature Evaluation through Ablation Study - Perform an ablation study to assess the impact of various features on system performance.
 - Web Application Development - Create a web-based chat interface for patients, medical researchers, and doctors, facilitating easier access and communication.
+
 
 ## Proposed Model Architectures
 Our proposed solution is centered around leveraging the capabilities of Large Language Models (LLM), with a focus on employing Long Short-Term Memory (LSTM) networks as our baseline architecture. This section outlines the models we plan to use and integrate into our system to enhance its performance in understanding and responding to medical queries.
