@@ -1,8 +1,13 @@
 # NLP Project - Medial QA (AIT - DSAI)
 
 - [Team Members](#team-members)
-
-
+- [Problem Statement](#problem-statement)
+- [Motivation](#motivation)
+- [Solution Requirements](#solution-requirements)
+- [Proposed Model Architectures](#proposed-model-architectures)
+- [Experiment Design](#experiment-design)
+- [Task Distribution](#task-distribution)
+- [Paper Summaries](#paper-Summaries)
 
 
 ## Team Members
@@ -16,7 +21,7 @@ Many people have a tough time finding reliable health advice. They run into prob
 ## Motivation
 We're inspired to tackle this challenge by creating a new kind of system that can talk to people and give them the health advice they're looking for instantly. Using the latest technology, we want to build a system that anyone can talk to about their health concerns — a system that understands them and offers clear, correct answers. Our project aims to make getting health advice as simple as asking a question, which could help everyone get better access to the health information they need and reduce the workload on healthcare professionals by providing answers to common health questions. This way, we're not just making health advice more accessible; we're also supporting a better, more efficient healthcare system for the future.
 
-## Solution Requirement
+## Solution Requirements
 
 - Natural Language Processing Deployment - Use NLP to understand and respond to patient queries efficiently.
 - Information Retrieval Enhancements - Increase the speed and accuracy of information retrieval.
@@ -29,7 +34,7 @@ We're inspired to tackle this challenge by creating a new kind of system that ca
 - Feature Evaluation through Ablation Study - Perform an ablation study to assess the impact of various features on system performance.
 - Web Application Development - Create a web-based chat interface for patients, medical researchers, and doctors, facilitating easier access and communication.
 
-## Proposed Model Architecture
+## Proposed Model Architectures
 Our proposed solution is centered around leveraging the capabilities of Large Language Models (LLM), with a focus on employing Long Short-Term Memory (LSTM) networks as our baseline architecture. This section outlines the models we plan to use and integrate into our system to enhance its performance in understanding and responding to medical queries.
 
 ### LSTM (Baseline)
@@ -87,7 +92,7 @@ The dataset shall be transformed into a vector database and subjected to a serie
 | Web Application Developer   | Rakshya         |
 
 
-## Paper Summary
+## Paper Summaries
 ### The AI Doctor Is In: A Survey of Task-Oriented Dialogue Systems for Healthcare Applications
 **Author:** Mina Valizadeh, Natalie Parde
 
