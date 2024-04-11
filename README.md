@@ -28,7 +28,7 @@ We're inspired to tackle this challenge by creating a new kind of system that ca
 - Database Organization - Preprocess and organize the database into categorized bins or vector repositories.
 - Classifier Utilization - Use a classifier to determine the appropriate vector repository for information retrieval based on user inputs.
 - Prompt Template Creation - Develop efficient prompt templates to guide user interactions smoothly.
-- Language Model Adjustment - Fine-tune the Large Language Model (LLM) with a Patient QA dataset to improve its response quality.  
+- Language Model Adjustment - Fine-tune the Large Language Model (LLM) with a Patient QA dataset to improve its response quality.
 - Experimental Analysis - Conduct experiments to identify the best models for the classifier and LLM.
 - Feature Evaluation through Ablation Study - Perform an ablation study to assess the impact of various features on system performance.
 - Web Application Development - Create a web-based chat interface for patients, medical researchers, and doctors, facilitating easier access and communication.
@@ -64,6 +64,7 @@ Begin by combining the datasets from Hugging Face's "medical-qa-datasets" and Ka
 
 Medical-qa-datasets: https://huggingface.co/datasets/lavita/medical-qa-datasets
 Diagnose-me: https://www.kaggle.com/datasets/dsxavier/diagnoise-me
+Dialog-dataset: https://drive.google.com/drive/folders/11sglwm6-cY7gjeqlZaMxL_MDKDMLdhym
 
 The dataset shall be transformed into a vector database and subjected to a series of preprocessing steps to distill the necessary information, which will subsequently be furnished to our Natural Language Processing (NLP) model. The system's classifier is designed to partition the vector database, enabling the model to exclusively access information from the pertinent dataset. Furthermore, the Large Language Model (LLM) will undergo fine-tuning through an ablation study to achieve the desired outcomes. Comparative analysis will be conducted between the results obtained from the LLM and those derived from the baseline model (Long Short-Term Memory, LSTM), along with additional models, to ascertain their relative efficacy.
 
