@@ -68,6 +68,10 @@ Diagnose-me: https://www.kaggle.com/datasets/dsxavier/diagnoise-me
 
 Dialog-dataset: https://drive.google.com/drive/folders/11sglwm6-cY7gjeqlZaMxL_MDKDMLdhym
 
+Wiki QA Dataset: https://www.kaggle.com/datasets/srikarkodakandla/wiki-qa-dataset
+
+Question and Answering dataset: https://www.kaggle.com/datasets/ananthu017/squad-csv-format
+
 The dataset shall be transformed into a vector database and subjected to a series of preprocessing steps to distill the necessary information, which will subsequently be furnished to our Natural Language Processing (NLP) model. The system's classifier is designed to partition the vector database, enabling the model to exclusively access information from the pertinent dataset. Furthermore, the Large Language Model (LLM) will undergo fine-tuning through an ablation study to achieve the desired outcomes. Comparative analysis will be conducted between the results obtained from the LLM and those derived from the baseline model (Long Short-Term Memory, LSTM), along with additional models, to ascertain their relative efficacy.
 
 ### Evaluation
