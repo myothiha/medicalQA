@@ -96,11 +96,11 @@ The dataset shall be transformed into a vector database and subjected to a serie
 |-----------------------------|-----------------|
 | Dataset                     | Myo Thiha       |
 | Preparation and Cleaning    | Kaung Htet Cho  |
-| LSTM (Baseline)             | Rakshya         |
-| Transformer                 | Myo Thiha       |
-| Sentence Bert               | Kaung Htet Cho  |
+| BART                        | Rakshya         |
+| Classification Models       | Myo Thiha       |
+| DialoGPT                    | Kaung Htet Cho  |
 | T5                          | Myo Thiha       |
-| Llama                       | Rakshya         |
+| BioMISTRAL                  | Rakshya         |
 | BioBert / Biogpt            | Kaung Htet Cho  |
 | Web Application Developer   | Rakshya         |
 
