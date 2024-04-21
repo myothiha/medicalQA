@@ -42,14 +42,9 @@ The foundation of our model relies on LSTM networks, known for their efficiency 
 Transformer:
 We aim to incorporate Transformer models due to their advanced attention mechanisms, which allow for better understanding and generation of responses by focusing on relevant parts of the input data.
 
-### Sentence-BERT
-To enhance the semantic understanding of patient queries, we will use Sentence-BERT, a modification of the BERT model trained for generating semantically meaningful sentence embeddings. This will improve the system's ability to match queries with the most relevant information.
-
 ### T5
 The Text-to-Text Transfer Transformer (T5) model will be employed for its versatility in handling various NLP tasks with a unified text-to-text approach. This will allow our system to reformulate patient queries into actionable tasks, such as information retrieval or answering questions directly.
 
-### Llama
-We plan to explore the use of Llama models for their potential in understanding and generating human-like responses, contributing to the system's ability to interact more naturally with users.
 
 ### BioBERT / BioGPT
 Given the healthcare context of our application, incorporating domain-specific models like BioBERT or BioGPT will be crucial. These models have been pre-trained on large-scale biomedical corpora, equipping our system with a deeper understanding of medical terminology and concepts.
