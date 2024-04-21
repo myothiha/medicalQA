@@ -35,26 +35,29 @@ We're inspired to tackle this challenge by creating a new kind of system that ca
 
 
 ## Proposed Model Architectures
-Our proposed solution is centered around leveraging the capabilities of Large Language Models (LLM), with a focus on employing Long Short-Term Memory (LSTM) networks as our baseline architecture. This section outlines the models we plan to use and integrate into our system to enhance its performance in understanding and responding to medical queries.
 
-### DialoGPT
+
+### Dialogue Generation Model
+Our proposed solution is centered around leveraging the capabilities of Large Language Models (LLM). This section outlines the models we plan to use and integrate into our system to enhance its performance in understanding and responding to medical queries.
+
+#### DialoGPT
 
 DialoGPT is a conversational AI model developed by OpenAI. It is based on the GPT (Generative Pre-trained Transformer) architecture, specifically fine-tuned for generating human-like responses in conversational contexts. DialoGPT is trained on a large corpus of dialogue data, allowing it to understand and generate responses that are contextually relevant and coherent in conversations.
 
-### BART
+#### BART
 
 BART (Bidirectional and Auto-Regressive Transformers) is a sequence-to-sequence model architecture developed by Facebook AI. BART is designed for various natural language processing tasks such as text generation, summarization, and language translation. It incorporates both auto-regressive and auto-encoding architectures, allowing it to generate text bidirectionally and effectively capture long-range dependencies in sequences.
 
-### BioMISTRAL
+#### BioMISTRAL
 
 BioMISTRAL is a bioinformatics tool developed by researchers at the University of Illinois at Urbana-Champaign. It is designed for analyzing and predicting protein structures and functions. BioMISTRAL utilizes advanced machine learning algorithms and computational techniques to model the complex relationships between protein sequences and their structural and functional properties. It can be used for tasks such as protein structure prediction, function annotation, and drug discovery in the field of bioinformatics.
 
 
-### T5
+#### T5
 The Text-to-Text Transfer Transformer (T5) model will be employed for its versatility in handling various NLP tasks with a unified text-to-text approach. This will allow our system to reformulate patient queries into actionable tasks, such as information retrieval or answering questions directly.
 
 
-### BioBERT / BioGPT
+#### BioBERT / BioGPT
 Given the healthcare context of our application, incorporating domain-specific models like BioBERT or BioGPT will be crucial. These models have been pre-trained on large-scale biomedical corpora, equipping our system with a deeper understanding of medical terminology and concepts.
 
 ### Conclusion
