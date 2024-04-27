@@ -6,7 +6,6 @@ import torch
 import cloudpickle
 import pickle
 from flask import session
-from gpt import answer_question
 
 # Initialize Flask app
 # Initialize Flask app with a secret key
@@ -42,6 +41,19 @@ with open('./label_encoder/traige_encoder.pkl', 'rb') as f:
     label_encoder_traige = pickle.load(f)
 
 max_len = 128
+
+def load_model():
+    file_path ="D:/AIT/Sem2/NLP/medicalQA/app/model/medical_chatbot_pickle_version3.pkl"
+    with open(file_path, 'rb') as f:
+        chain = cloudpickle.load(f)
+    return chain
+
+def answer_question(query):
+    model = load_model()
+    answer = model({"question":query})
+    answer_text = answer['answer']
+    print (answer_text)
+    return answer_text
 
 def predict_text_relevant(model, text, tokenizer, max_len, device):
     model.eval()
