@@ -43,7 +43,7 @@ with open('./label_encoder/traige_encoder.pkl', 'rb') as f:
 max_len = 128
 
 def load_model():
-    file_path ="D:/AIT/Sem2/NLP/medicalQA/app/model/medical_chatbot_pickle_version3.pkl"
+    file_path ="model/medical_chatbot_pickle_version3.pkl"
     with open(file_path, 'rb') as f:
         chain = cloudpickle.load(f)
     return chain
