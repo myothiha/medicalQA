@@ -11,28 +11,40 @@
 
 <body style="background-color:white;">
 
-    <h1>Medical QA</h1>
-
-    <form action="/qa" method="post">
-        <label for="prompt_a5">Enter your query:</label>
-        <!-- Input box for user's message -->
-        <input type="text" id="user_message" name="user_message" required value="{{ user_message }}">
-
-        <button type="submit">Send</button>
-    </form>
-
-    {% if generated_response %}
-    <div class="result-container">
-        <div class="result-card chatbot-response">
-            <h2>Chatbot Response</h2>
-            <!-- Display the generated response as HTML -->
-            <p><strong>Answer: </strong></p>
-            {{ generated_response | safe }}
-            <!-- Provide relevant source documents -->
-            
+    <div class="chat-container" style="margin-top: 10px;">
+        <!-- Initial prompt message from MedicalBot -->
+        <div class="message-container bot-message">
+            <div class="message-text">
+                Hello! I'm your Medical Assistant, here to provide you with insights and information about health conditions, treatments, and general medical advice. Whether you need information on symptoms, advice on health issues, or details about medical procedures, feel free to ask, and I'll do my best to provide you with clear and informative answers.
+            </div>
         </div>
+    
+        <!-- Display chat history -->
+        {% for message in chat_history %}
+            <!-- User's message -->
+            <div class="message-container user-message">
+                <div class="message-text">
+                    {{ message['user_message'] }}
+                </div>
+            </div>
+    
+            <!-- Chatbot's response -->
+            <div class="message-container bot-message">
+                <div class="message-text">
+                    {{ message['generated_response'] | safe }}
+                </div>
+            </div>
+        {% endfor %}
+    
+        <form action="/qa" method="post" class="message-input-container" style="margin-top: 20px;">
+            <!-- Input box for user's message -->
+            <input type="text" id="user_message" name="user_message" required class="message-input" placeholder="Type your message here...">
+    
+            <button type="submit" class="send-button">Send</button>
+        </form>
     </div>
-    {% endif %}
+
+    
 </body>
 
 </html>

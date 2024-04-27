@@ -1,22 +1,27 @@
 # Import necessary modules
 from flask import Flask, render_template, request
 # from gpt import answer_question
-from transformers import T5Tokenizer, T5ForConditionalGeneration, BertTokenizer, BertForSequenceClassification
+from transformers import BertTokenizer, BertForSequenceClassification
 import torch
+import cloudpickle
 import pickle
+from flask import session
+from gpt import answer_question
 
 # Initialize Flask app
+# Initialize Flask app with a secret key
 app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 model_directory_triage = "./triage_bert"
-model_directory = "./model_t5"  # Adjust the path to match where you've saved the model
+# model_directory = "./model_t5"  # Adjust the path to match where you've saved the model
 model_directory_relevant = "./relevantQA_bert"
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-load_model = T5ForConditionalGeneration.from_pretrained(model_directory)
-load_model.to(device)
-load_tokenizer = T5Tokenizer.from_pretrained(model_directory)
-load_model = load_model.eval()
+# load_model = T5ForConditionalGeneration.from_pretrained(model_directory)
+# load_model.to(device)
+# load_tokenizer = T5Tokenizer.from_pretrained(model_directory)
+# load_model = load_model.eval()
 
 load_model_triage = BertForSequenceClassification.from_pretrained(model_directory_triage)
 load_model_triage.to(device)
@@ -35,6 +40,13 @@ with open('./label_encoder/relevant_encoder.pkl', 'rb') as f:
 # Load the label encoder from a file
 with open('./label_encoder/traige_encoder.pkl', 'rb') as f:
     label_encoder_traige = pickle.load(f)
+
+file_path = 'model/medical_chatbot_pickle_version3.pkl'
+
+def load_model():
+    with open(file_path, 'rb') as f:
+        chain = cloudpickle.load(f)
+    return chain
 
 max_len = 128
 
@@ -83,41 +95,20 @@ def predict_text(model, text, tokenizer, max_len, device):
 
     return prediction
 
-def answer_question(question):
-    load_model.eval()
-    with torch.no_grad():
-        input_ids = load_tokenizer(question, return_tensors="pt", padding=True, truncation=True, max_length=512).input_ids.to(device)
-        outputs = load_model.generate(
-            input_ids,
-            max_length=512,
-            temperature=0.4,
-            do_sample=True,
-            top_k=20
-        )
-        answer = load_tokenizer.decode(outputs[0], skip_special_tokens=True)
-        points = answer.split('. ')
-        formatted_points = '</p><p>'.join(points)
-        # Join the points with <br> tags and wrap in <p> tags
-        formatted_answer = '<p>' + '</p><p>'.join(points) + '</p>'
-         # Capitalize the first word of the paragraph
-        formatted_answer = formatted_answer.capitalize()
-        # Remove any occurrence of "Regards"
-        formatted_answer = formatted_answer.replace("Regards", "")
-        formatted_answer = formatted_answer.replace("thank you", "")
-        # Remove the "Click on this link" part
-        formatted_answer = formatted_answer.split('Click on this link')[0]
-    return formatted_answer
-
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('pages/index.html')
+    prompt_message = "Hello! I'm your Medical Assistant, here to provide you with insights and information about health conditions, treatments, and general medical advice. Whether you need information on symptoms, advice on health issues, or details about medical procedures, feel free to ask, and I'll do my best to provide you with clear and informative answers."
+    return render_template('pages/index.html', prompt_message=prompt_message)
 
 # Route for handling form submission
 @app.route('/qa', methods=['GET', 'POST'])
 def qa():
     generated_response = None
     user_message = ""
+
+    # Load chat history if it exists, otherwise initialize an empty list
+    chat_history = session.get('chat_history', [])
 
     if request.method == 'POST':
         user_message = request.form['user_message']
@@ -133,8 +124,13 @@ def qa():
         else :
             generated_response = "This is not a question of relevancy with a medical situation and this application is only able to handle queries related to health and medicine"
 
-    return render_template('pages/index.html', generated_response=generated_response, user_message=user_message)
+        # Append current message and response to chat history
+        chat_history.append({'user_message': user_message, 'generated_response': generated_response})
 
+        # Save chat history to session
+        session['chat_history'] = chat_history
+
+    return render_template('pages/index.html', generated_response=generated_response, user_message=user_message, chat_history=chat_history)
 
 # Run the Flask app
 if __name__ == '__main__':
