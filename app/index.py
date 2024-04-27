@@ -41,13 +41,6 @@ with open('./label_encoder/relevant_encoder.pkl', 'rb') as f:
 with open('./label_encoder/traige_encoder.pkl', 'rb') as f:
     label_encoder_traige = pickle.load(f)
 
-file_path = 'model/medical_chatbot_pickle_version3.pkl'
-
-def load_model():
-    with open(file_path, 'rb') as f:
-        chain = cloudpickle.load(f)
-    return chain
-
 max_len = 128
 
 def predict_text_relevant(model, text, tokenizer, max_len, device):
