@@ -1,13 +1,24 @@
-![image](https://github.com/myothiha/medicalQA/assets/45217500/27d90273-f320-47f7-bf3a-eea7f7a43841)# NLP Project - Medial QA (AIT - DSAI)
+# NLP Project - Medial QA (AIT - DSAI)
 
 - [Team Members](#team-members)
+- [Introduction](#introduction)
 - [Problem Statement](#problem-statement)
 - [Motivation](#motivation)
 - [Solution Requirements](#solution-requirements)
-- [Proposed Model Architectures](#proposed-model-architectures)
-- [Experiment Design](#experiment-design)
-- [Task Distribution](#task-distribution)
-- [Paper Summaries](#paper-Summaries)
+- [Related Work](#related-work)
+- [Methodology](#methodology)
+- [Dataset](#dataset)
+- [Models](#models)
+- [Evaluation](#evaluation)
+  - [Classifier Evaluation](#classifier-evaluation)
+    - [Triage Model](#triage-model)
+    - [Relevant Model](#relevant-model)
+  - [Chatbot Evaluation Methodology](#chatbot-evaluation-methodology)
+  - [Precision and Comparison with GPT-2](#precision-and-comparison-with-gpt-2)
+  - [Results](#results)
+    - [Score Distribution](#score-distribution)
+- [Discussions](#discussions)
+
 
 
 ## Team Members
@@ -126,8 +137,8 @@ By integrating these three models into our medical chatbot framework, we have de
 #### Triage Model
 
 The Triage Model exhibited commendable performance across multiple evaluation metrics:
-![image](https://github.com/myothiha/medicalQA/assets/45217500/09dda4ac-5861-4f0e-a353-095389f9339c)
-![Triage Model Evaluation]
+![Triage Model Evaluation](https://github.com/myothiha/medicalQA/assets/45217500/09dda4ac-5861-4f0e-a353-095389f9339c)
+
 
 - Precision: The precision of the Triage Model was calculated to be 0.82, indicating a high degree of accuracy in correctly identifying cases of medical emergency.
 - Recall: With a recall score of 0.88, the Triage Model demonstrated its effectiveness in capturing a significant portion of true positive instances, thereby minimizing the likelihood of missing critical cases.
@@ -139,8 +150,8 @@ The evaluation of the Relevant Model yielded remarkable results, albeit with a c
 for markdown
 
 
-![image](https://github.com/myothiha/medicalQA/assets/45217500/8e6122bd-57a7-4433-ab66-a0e6ee672031)
-![Relevant Model Evaluation]
+![Relevant Model Evaluation](https://github.com/myothiha/medicalQA/assets/45217500/8e6122bd-57a7-4433-ab66-a0e6ee672031)
+
 - Precision, Recall, F1-score, and Accuracy: The Relevant Model achieved perfect scores of 100% in precision, recall, F1-score, and accuracy. While these results suggest an outstanding performance, the possibility of overfitting cannot be discounted. Overfitting occurs when a model excessively adapts to the training data, resulting in poor generalization to unseen data.
 
 n summary, while the Relevant Model demonstrated impeccable performance on the evaluation metrics, further analysis is warranted to ensure its robustness and generalizability beyond the training dataset. Strategies such as cross-validation and exploring alternative evaluation methods may help mitigate the risk of overfitting and provide a more comprehensive assessment of the model's capabilities.
@@ -161,14 +172,14 @@ Questionnaire Distribution: Doctors were provided with a structured questionnair
 - Repeated Answer: Identification of duplicated responses to gauge the chatbot's ability to provide diverse and unique answers.
 - Expert Feedback: Based on their assessment, medical experts provided qualitative feedback and suggestions for improving the chatbot's performance, helping to refine and optimize its capabilities.
 
-![image](https://github.com/myothiha/medicalQA/assets/45217500/eebef702-34f4-4a7d-9b0a-94b3097ec96c)
-![Marking Criteria of Human Evaluation]
+![Marking Criteria of Human Evaluation](https://github.com/myothiha/medicalQA/assets/45217500/eebef702-34f4-4a7d-9b0a-94b3097ec96c)
+
 
 ## Precision and Comparison with GPT-2:
 In addition to expert evaluation, precision metrics were utilized to quantify the accuracy and effectiveness of the chatbot's responses. Furthermore, a comparative analysis was conducted to benchmark our chatbot against GPT-2 models trained specifically on medical exam datasets by using cosine similarity. By comparing precision scores and qualitative assessments, we gained insights into the chatbot's performance relative to existing state-of-the-art models.
 
-![image](https://github.com/myothiha/medicalQA/assets/45217500/d9afd672-93e4-45f1-af0a-c0f9ba0ffd40)
-![Precision of model with medical exam question]
+![Precision of model with medical exam question](https://github.com/myothiha/medicalQA/assets/45217500/d9afd672-93e4-45f1-af0a-c0f9ba0ffd40)
+
 
 The precision score of 0.28 indicates that the proportion of relevant instances among the total instances retrieved by the chatbot is relatively low. In other words, out of all the responses provided by the chatbot, only approximately 28% were deemed accurate and relevant according to the evaluation criteria.
 
@@ -179,7 +190,7 @@ Analyzing the factors contributing to the low precision score, such as the compl
 By employing a multi-faceted evaluation approach encompassing expert judgment, precision metrics, and comparative analysis, we obtained a comprehensive understanding of our medical chatbot's strengths, weaknesses, and areas for improvement. This iterative process enables us to continuously enhance the chatbot's capabilities and deliver optimal performance in addressing users' medical queries.
 
 ## RESULTS
-Dr. Garima Thakur, Dr. Abhigya Paudeyal. Dr
+Dr. Garima Thakur, Dr. Abhigya Paudeyal. Dr Sudeshna Shrestha
 
 | Accuracy | Logic | Informativeness | Comprehension | Tone | Repeated Answer | Total Score (%) |
 |----------|-------|-----------------|---------------|------|-----------------|-----------------|
@@ -260,8 +271,8 @@ Total accuracy: 77%
 The bar chart visualizes the evaluation criteria scores for a particular system or model across various criteria. Each criterion is represented on the x-axis, including "Accuracy," "Logic," "Informativeness," "Comprehension," "Tone," and "Repeated Answer." The corresponding scores for each criterion are depicted on the y-axis, ranging from 0 to 1.
 From the graph, we can observe the following:
 
-![image](https://github.com/myothiha/medicalQA/assets/45217500/f3d12591-dcca-4172-b8da-bec38c43703f)
-![Score Distribution]
+![Score Distribution](https://github.com/myothiha/medicalQA/assets/45217500/f3d12591-dcca-4172-b8da-bec38c43703f)
+
 
 - Accuracy: The system or model achieves a score of approximately 0.72, indicating a relatively high level of accuracy in providing correct responses.
 - Logic: The logic score is around 0.39, suggesting that there is room for improvement in the system's understanding and handling of medical jargon and logical reasoning.
