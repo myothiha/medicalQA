@@ -1,4 +1,4 @@
-# NLP Project - Medial QA (AIT - DSAI)
+# NLP Project - Medical Chatbot (AIT - DSAI)
 
 - [Team Members](#team-members)
 - [Introduction](#introduction)
