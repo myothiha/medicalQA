@@ -259,9 +259,13 @@ The provided data consists of evaluations conducted by Dr. Garima Thakur on vari
 Each evaluation entry also includes a "Total Score" that aggregates the ratings across the six criteria.
 
 To summarize the provided data:
+
 Total number of evaluations: 90
+
 Total number of correct responses: 69
+
 Total number of incorrect responses: 21
+
 Total accuracy: 77%
 
 
